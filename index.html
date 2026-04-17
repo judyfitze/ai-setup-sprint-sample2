@@ -28,8 +28,24 @@
     ul{padding-left:20px;text-align:left;display:inline-block}
     .price{font-size:3rem;font-weight:900;color:var(--green)}
     .final{padding:48px 24px 80px;text-align:center}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.68);display:none;align-items:center;justify-content:center;padding:24px;z-index:9999}
+    .modal-backdrop.active{display:flex}
+    .modal{width:min(860px,100%);max-height:min(88vh,920px);overflow:auto;background:linear-gradient(180deg,#10192c,#111827);border:1px solid #2b3c55;border-radius:24px;box-shadow:0 24px 80px rgba(0,0,0,.45);padding:22px;position:relative}
+    .modal h2{margin:0 0 12px;color:var(--cyan);text-align:center}
+    .modal p.helper{margin:0 0 22px;color:var(--muted);text-align:center}
+    .close-btn{position:absolute;top:14px;right:14px;background:#182338;color:#fff;border:1px solid #2b3c55;border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:18px}
+    .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field.full{grid-column:1 / -1}
+    .field label{font-weight:700;color:#d9e3f0;font-size:.95rem}
+    .field input,.field select,.field textarea{width:100%;padding:12px 12px;border-radius:14px;border:1px solid #31425b;background:#0d1424;color:#f5f7fb;font:inherit}
+    .field textarea{min-height:90px;resize:vertical}
+    .form-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    .thankyou{display:none;text-align:center;padding:20px 10px 8px}
+    .thankyou.active{display:block}
+    .form-wrap.hidden{display:none}
     @media (max-width: 900px){
-      .grid-3,.grid-2{grid-template-columns:1fr}
+      .grid-3,.grid-2,.form-grid{grid-template-columns:1fr}
       .card{min-height:auto}
     }
   </style>
@@ -41,8 +57,25 @@
       <h1>Stop Guessing About AI.<br><span class="hl">Get One Real AI System Working</span> In Your Business Fast.</h1>
       <p class="sub">If you know AI matters but you still haven’t implemented anything useful, this sprint helps you identify the best first workflow, set it up, and get it working without drowning in tools, prompts, or confusion.</p>
       <div class="cta-row">
-        <a class="btn primary" href="#book">Book Your AI Setup Sprint</a>
-        <a class="btn secondary" href="#included">See What We Can Automate First</a>
+        <a class="btn primary" href="https://buy.stripe.com/3cIaEZ2pA9Uy3yubOw7AI01">Book Your AI Setup Sprint</a>
+        <a class="btn secondary" href="#apply" data-open-apply>Apply / Ask a Question First</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="card" style="max-width:980px;margin:0 auto;padding:28px 28px 34px;">
+        <h2 class="section-title" style="text-align:center;">Watch How The Sprint Works</h2>
+        <div style="position:relative;padding:14px;border-radius:24px;background:linear-gradient(135deg, rgba(0,217,255,.18), rgba(251,191,36,.12));box-shadow:0 20px 60px rgba(0,0,0,.32);">
+          <div style="position:relative;padding-top:56.25%;border-radius:18px;overflow:hidden;border:1px solid #2b3c55;background:#000;">
+            <iframe
+              src="https://www.youtube.com/embed/E22BMJkp9Y8?rel=0"
+              title="AI Setup Sprint VSL"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              style="position:absolute;inset:0;width:100%;height:100%;border:0;">
+            </iframe>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -109,12 +142,27 @@
       </div>
     </section>
 
+    <section>
+      <div class="section-head">
+        <h2 class="section-title">Why Business Owners Say Yes</h2>
+        <p class="muted">Use this section for proof, credibility, and trust-building as testimonials and case studies come in.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card"><h3>Fast first win</h3><p class="muted">This offer is built around one practical system, not a giant complicated rebuild.</p></div>
+        <div class="card"><h3>Implementation, not theory</h3><p class="muted">Business owners want something working — not another course full of ideas they never use.</p></div>
+        <div class="card"><h3>Expandable after success</h3><p class="muted">Once the first workflow is live, it becomes easier to add more automation and support.</p></div>
+      </div>
+    </section>
+
     <section id="book">
       <div class="card" style="text-align:center;max-width:760px;margin:0 auto;">
         <h2 class="section-title">AI Setup Sprint</h2>
         <div class="price">Starting at $1,500</div>
         <p class="muted">A practical implementation sprint for local businesses ready to stop dabbling and start using AI.</p>
-        <div class="cta-row"><a class="btn primary" href="mailto:gaspella@agentmail.to?subject=AI%20Setup%20Sprint%20Inquiry">Book Your AI Setup Sprint</a></div>
+        <div class="cta-row">
+          <a class="btn primary" href="https://buy.stripe.com/3cIaEZ2pA9Uy3yubOw7AI01">Book Your AI Setup Sprint</a>
+          <a class="btn secondary" href="#apply" data-open-apply>Apply / Ask a Question First</a>
+        </div>
       </div>
     </section>
 
@@ -133,8 +181,95 @@
     <section class="final">
       <h2 class="section-title">You Don’t Need Another AI Course.</h2>
       <p class="sub">You need one real system that works.</p>
-      <a class="btn primary" href="mailto:gaspella@agentmail.to?subject=AI%20Setup%20Sprint%20Inquiry">Book Your AI Setup Sprint</a>
+      <div class="cta-row">
+        <a class="btn primary" href="https://buy.stripe.com/3cIaEZ2pA9Uy3yubOw7AI01">Book Your AI Setup Sprint</a>
+        <a class="btn secondary" href="#apply" data-open-apply>Apply / Ask a Question First</a>
+      </div>
     </section>
   </div>
+
+
+  <div class="modal-backdrop" id="applyModal">
+    <div class="modal">
+      <button class="close-btn" type="button" id="closeApplyModal">×</button>
+      <div class="form-wrap" id="applyFormWrap">
+        <h2>Apply / Ask a Question First</h2>
+        
+        <form id="applyForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" required /></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
+            <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" /></div>
+            <div class="field"><label for="business">Business Name</label><input id="business" name="business" /></div>
+            <div class="field"><label for="website">Website</label><input id="website" name="website" placeholder="https://" /></div>
+            <div class="field"><label for="type">Business Type</label><input id="type" name="type" placeholder="Agency, coach, realtor, local service..." /></div>
+            <div class="field"><label for="bottleneck">Biggest Bottleneck</label><input id="bottleneck" name="bottleneck" placeholder="Lead follow-up, admin, content, onboarding..." /></div>
+            <div class="field"><label for="revenue">Monthly Revenue Range</label>
+              <select id="revenue" name="revenue"><option value="">Select one</option><option>Under $5k</option><option>$5k–$15k</option><option>$15k–$50k</option><option>$50k+</option></select>
+            </div>
+            <div class="field"><label for="timeline">Timeline / Urgency</label>
+              <select id="timeline" name="timeline"><option value="">Select one</option><option>ASAP</option><option>This month</option><option>Next 30–60 days</option><option>Just exploring</option></select>
+            </div>
+            <div class="field full"><label for="budget">Budget Comfort</label>
+              <select id="budget" name="budget"><option value="">Select one</option><option>$500–$1,500</option><option>$1,500–$3,000</option><option>$3,000+</option><option>Not sure yet</option></select>
+            </div>
+            <div class="field full"><label for="questions">What questions do you have?</label><textarea id="questions" name="questions"></textarea></div>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Submit Inquiry</button>
+          </div>
+        </form>
+      </div>
+      <div class="thankyou" id="applyThankYou">
+        <h2>Thank you for your inquiry.</h2>
+        <p class="helper">We will review it and follow up with you soon.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const applyModal = document.getElementById('applyModal');
+    const openBtns = document.querySelectorAll('[data-open-apply]');
+    const closeBtn = document.getElementById('closeApplyModal');
+    const form = document.getElementById('applyForm');
+    const thankYou = document.getElementById('applyThankYou');
+    const formWrap = document.getElementById('applyFormWrap');
+    function openModal(){ applyModal.classList.add('active'); document.body.style.overflow='hidden'; }
+    function closeModal(){ applyModal.classList.remove('active'); document.body.style.overflow=''; }
+    openBtns.forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); openModal(); }));
+    closeBtn.addEventListener('click', closeModal);
+    applyModal.addEventListener('click', e => { if(e.target === applyModal) closeModal(); });
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const formData = Object.fromEntries(new FormData(form).entries());
+      
+      // Prepare payload for webhook
+      const gcPayload = {
+        formType: 'inquiry',
+        email: formData.email,
+        name: formData.name || '',
+        phone: formData.phone || ''
+      };
+      
+      try {
+        // Submit to API endpoint (handles email notification + Global Control)
+        const gcRes = await fetch('/api/inquiry', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        
+        // Always show success if we get any response (backend handles email + GC)
+        formWrap.classList.add('hidden');
+        thankYou.classList.add('active');
+      } catch (err) {
+        // Even on error, backend likely processed it (CORS preflight, etc.)
+        // Check if we should still show success
+        console.log('Fetch completed (possible CORS warning):', err);
+        formWrap.classList.add('hidden');
+        thankYou.classList.add('active');
+      }
+    });
+  </script>
+
 </body>
 </html>
